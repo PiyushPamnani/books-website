@@ -28,12 +28,48 @@ app.get("/books", (req, res) => {
   });
 });
 
+app.get("/books/:id", (req, res) => {
+  const { id } = req.params;
+
+  const que = "SELECT * FROM books WHERE id = ?";
+
+  db.query(que, [id], (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+
 app.post("/books", (req, res) => {
-  const que = "INSERT INTO books (`title`, `desc`, `cover`) VALUES (?)";
-  const { title, desc, cover } = req.body;
-  const values = [title, desc, cover];
+  const que =
+    "INSERT INTO books (`title`, `desc`, `price`, `cover`) VALUES (?)";
+  const { title, desc, price, cover } = req.body;
+  const values = [title, desc, price, cover];
 
   db.query(que, [values], (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+
+app.delete("/books/:id", (req, res) => {
+  const { id } = req.params;
+  const que = "DELETE FROM books WHERE id = ?";
+
+  db.query(que, [id], (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
+  });
+});
+
+app.put("/books/:id", (req, res) => {
+  const { id } = req.params;
+  const { title, desc, price, cover } = req.body;
+  const que =
+    "UPDATE books SET `title` = ?, `desc` = ?, `price` = ?, `cover` = ? WHERE id = ?";
+
+  const values = [title, desc, price, cover];
+
+  db.query(que, [...values, id], (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
   });
