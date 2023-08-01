@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .books {
   display: flex;
   gap: 10px;
@@ -36,13 +40,39 @@ img {
   color: red;
 }
 
+.delete:hover {
+  background-color: red;
+  color: white;
+}
+
 .update {
   padding: 3px 6px;
   background-color: white;
   cursor: pointer;
   border: 1px solid blue;
   border-radius: 5px;
+  text-decoration: none;
   color: blue;
+}
+
+.update:hover {
+  background-color: blue;
+  color: white;
+}
+
+.addBookButton {
+  margin-top: 18px;
+  padding: 6px 10px;
+  border: 1px solid green;
+  cursor: pointer;
+  background-color: white;
+  color: green;
+  border-radius: 5px;
+}
+
+.addBookButton:hover {
+  background-color: green;
+  color: white;
 }
 
 .form {
@@ -55,6 +85,14 @@ input {
   width: 250px;
   padding: 10px;
   border: 1px solid gray;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
 .formButton {

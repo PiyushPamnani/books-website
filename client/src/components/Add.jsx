@@ -34,9 +34,10 @@ const Add = () => {
         onChange={handleChange}
         name="title"
       />
-      <input
+      <textarea
         type="text"
         placeholder="Description"
+        rows={4}
         onChange={handleChange}
         name="desc"
       />
@@ -48,11 +49,11 @@ const Add = () => {
       />
       <input
         type="text"
-        placeholder="Cover"
+        placeholder="(Add photo link here, EX: https://i.ibb.co/fFcKC8x/memories-project.png)"
         onChange={handleChange}
         name="cover"
       />
-      <button className="formbutton" onClick={handleClick}>
+      <button className="formButton" onClick={handleClick}>
         Add
       </button>
     </div>

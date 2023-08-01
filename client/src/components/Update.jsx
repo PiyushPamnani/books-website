@@ -54,10 +54,11 @@ const Update = () => {
             value={inputBook.title}
             onChange={handleChange}
           />
-          <input
+          <textarea
             type="text"
             placeholder="Description"
             name="desc"
+            rows={4}
             value={inputBook.desc}
             onChange={handleChange}
           />
