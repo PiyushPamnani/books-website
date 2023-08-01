@@ -29,6 +29,9 @@ const Books = () => {
   return (
     <div>
       <h1>Book Shop</h1>
+      <Link to="/add">
+        <button className="addBookButton">Add new book</button>
+      </Link>
       <div className="books">
         {books.map((book) => (
           <div className="book" key={book.id}>
@@ -45,9 +48,6 @@ const Books = () => {
           </div>
         ))}
       </div>
-      <Link to="/add">
-        <button className="addBookButton">Add new book</button>
-      </Link>
     </div>
   );
 };
